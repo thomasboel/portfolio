@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BrowserView, MobileView } from 'react-device-detect';
-import Label, { LabelType } from '../components/Label';
+import Label from '../components/Label';
 import { colors } from '../util/theme';
 
 const Wrapper = styled.footer`
@@ -13,11 +13,7 @@ const Wrapper = styled.footer`
   padding-bottom: 24px;
 `;
 
-interface ContainerTemplateProps {
-
-}
-
-const ContainerTemplate = ({ }: ContainerTemplateProps) => {
+const Footer = () => {
   
   return (
     <>
@@ -33,4 +29,4 @@ const ContainerTemplate = ({ }: ContainerTemplateProps) => {
   );
 }
 
-export default ContainerTemplate;
+export default Footer;

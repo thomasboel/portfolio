@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Project as ProjectData } from '../containers/Projects';
+import { ProjectData } from '../containers/Projects';
 import { colors } from '../util/theme';
 import Label, { LabelType } from './Label';
 
@@ -44,6 +44,8 @@ const Links = styled.div`
 const Technologies = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
   width: 100%;
 `;
 
@@ -71,7 +73,7 @@ const Project = ({ project, style }: ProjectProps) => {
 
       <Indentation>
 
-        <Links>{project.links.map((link, index) => <a key={index} href={link.url}>{link.icon}</a>)}</Links>
+        <Links>{project.links.map((link, index) => <a key={index} href={link.url} style={{ marginRight: index === 0 ? 0 : 24 }}>{link.icon}</a>)}</Links>
 
         <Label type={LabelType.PROJECT_HEADER} color={colors.lightPurple}>{project.title.toUpperCase().replace(' ', '\n').concat('.')}</Label>
 

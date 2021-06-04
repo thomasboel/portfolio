@@ -22,8 +22,8 @@ const ProjectHeader = styled.h2<Props>`
   letter-spacing: .060em;
   line-height: 30px;
   font-size: 30px;
-  font-weight: 600;
-  margin-block-start: 8px;
+  font-weight: 300;
+  margin-block-start: 24px;
   white-space: pre-wrap;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
@@ -44,13 +44,8 @@ const ProjectSubHeader = styled.h4<Props>`
   letter-spacing: .032em;
   font-size: 16px;
   font-weight: 300;
-  margin-left: 16px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
-
-  &:first-child {
-    margin-left: 0;
-  }
 `;
 
 const Paragraph = styled.p<Props>`

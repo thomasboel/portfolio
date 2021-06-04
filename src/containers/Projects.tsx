@@ -6,7 +6,7 @@ import Label, { LabelType } from '../components/Label';
 import Pokemon, { Pokemons } from '../components/Pokemon';
 import Project from '../components/Project';
 
-import { GitHubIcon } from '../util/icons';
+import { ExternalLinkIcon, GitHubIcon } from '../util/icons';
 
 const Wrapper = styled.section`
   padding: 0 24px 0 24px;
@@ -28,61 +28,57 @@ interface ProjectLink {
   icon: JSX.Element;
 }
 
-export interface Project {
+export interface ProjectData {
   title: string;
   description: string;
   technologies: Array<string>;
   links: Array<ProjectLink>;
 }
 
-const projects: Array<Project> = [
+const projects: Array<ProjectData> = [
   {
-    title: "Project Name",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    technologies: [ "React", "NodeJS" ],
+    title: "PayShare",
+    description: "Share your receipts, select who, what and how much. Keep track of the economy.",
+    technologies: [ "React-Native", ".NET Core", "Postgres", "AWS", "Docker" ],
+    links: [ 
+      { url: "https://payshare.dk", icon: <ExternalLinkIcon /> }
+    ]
+  },
+  {
+    title: "Noodle",
+    description: "Noodle event planner will help you create and communicate the schedule to any participants.",
+    technologies: [ "React-Native", "Express", "MariaDB", "Docker" ],
     links: [ 
       { url: "https://github.com", icon: <GitHubIcon /> } 
     ]
   },
   {
-    title: "Project Name",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    technologies: [ "React", "NodeJS" ],
+    title: "Presuno",
+    description: "Presuno turns you and your smartphone into a complete TV crew! Live Streaming software.",
+    technologies: [ "React", "React-Native", "Wowza", ".NET Core" ],
     links: [ 
-      { url: "https://github.com", icon: <GitHubIcon /> } 
+      { url: "https://presuno.com", icon: <ExternalLinkIcon /> } 
     ]
   },
   {
-    title: "Project Name",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    technologies: [ "React", "NodeJS" ],
+    title: "Katalog",
+    description: "Keep track and share diet/intolerance catalogs with your friends or the public!",
+    technologies: [ "React-Native", "Express", "Postgres", "AWS", "Docker" ],
     links: [ 
-      { url: "https://github.com", icon: <GitHubIcon /> } 
+      { url: "https://katalog.sikkerforskning.dk", icon: <ExternalLinkIcon /> } 
     ]
   },
   {
-    title: "Project Name",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    technologies: [ "React", "NodeJS" ],
+    title: "Portfolio Website",
+    description: "Should you be interested, the code for this website has been pushed to GitHub 😃",
+    technologies: [ "React with typescript ❤" ],
     links: [ 
-      { url: "https://github.com", icon: <GitHubIcon /> } 
-    ]
-  },
-  {
-    title: "Project Name",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    technologies: [ "React", "NodeJS" ],
-    links: [ 
-      { url: "https://github.com", icon: <GitHubIcon /> } 
+      { url: "https://github.com/thomasboel/portfolio", icon: <GitHubIcon /> }
     ]
   }
 ];
 
-interface ContainerTemplateProps {
-
-}
-
-const ContainerTemplate = ({ }: ContainerTemplateProps) => {
+const Projects = () => {
   
   return (
     <>
@@ -90,7 +86,7 @@ const ContainerTemplate = ({ }: ContainerTemplateProps) => {
       
       </BrowserView>
       <MobileView>
-        <Wrapper>
+        <Wrapper id="projects">
           <FlexRow>
             <Label type={LabelType.HEADER}>PROJECTS</Label>
             <Pokemon pokemon={Pokemons.PHANPY} style={{ marginLeft: 24 }}/>
@@ -107,4 +103,4 @@ const ContainerTemplate = ({ }: ContainerTemplateProps) => {
   );
 }
 
-export default ContainerTemplate;
+export default Projects;

@@ -51,14 +51,10 @@ const contactOptions: Array<Link> = [
   { 
     url: "https://discordapp.com/users/190577521367056394",
     icon: <DiscordIcon />
-  },
+  }
 ]
 
-interface ContainerTemplateProps {
-
-}
-
-const ContainerTemplate = ({ }: ContainerTemplateProps) => {
+const Contact = () => {
   
   const ContactIcons = () => (
     <FlexRow style={{ marginTop: 24 }}>
@@ -103,4 +99,4 @@ const ContainerTemplate = ({ }: ContainerTemplateProps) => {
   );
 }
 
-export default ContainerTemplate;
+export default Contact;

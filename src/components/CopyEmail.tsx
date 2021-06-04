@@ -45,12 +45,14 @@ const CopyEmail = ({ email, style }: CopyEmailProps) => {
 
       </BrowserView>
       <MobileView>
+        <a href={'mailto:'+email}>
         <Wrapper style={style}>
           <IconWrapper>
             <CopyIcon color={colors.red} />
           </IconWrapper>
           <Email>{email}</Email>
         </Wrapper>
+        </a>
       </MobileView>
     </>
   );

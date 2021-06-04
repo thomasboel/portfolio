@@ -307,3 +307,27 @@ export const MailIcon = () => isMobile ? (
     </g>
   </svg>
 );
+
+export const ExternalLinkIcon = () => isMobile ? (
+  <svg width="32" height="32.121" viewBox="0 0 32 32.121">
+    <g id="ExternalLinkMobile" transform="translate(-266 -848.879)">
+      <rect id="Rectangle_2216" data-name="Rectangle 2216" width="32" height="32" transform="translate(266 849)" fill="none"/>
+      <g id="Icon_feather-external-link" data-name="Icon feather-external-link" transform="translate(263.5 846.5)">
+        <path id="Path_183" data-name="Path 183" d="M27,19.5v9a3,3,0,0,1-3,3H7.5a3,3,0,0,1-3-3V12a3,3,0,0,1,3-3h9" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_184" data-name="Path 184" d="M22.5,4.5h9v9" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_185" data-name="Path 185" d="M15,21,31.5,4.5" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </svg>
+) : (
+  <svg width="40.121" height="40.121" viewBox="0 0 40.121 40.121">
+    <g id="ExternalLinkDesktop" transform="translate(-266 -848.879)">
+      <rect id="Rectangle_2216" data-name="Rectangle 2216" width="40" height="40" transform="translate(266 849)" fill="none"/>
+      <g id="Icon_feather-external-link" data-name="Icon feather-external-link" transform="translate(263.5 846.5)">
+        <path id="Path_183" data-name="Path 183" d="M34.509,23v12a4,4,0,0,1-4,4H8.5a4,4,0,0,1-4-4V13a4,4,0,0,1,4-4h12" transform="translate(0 1.491)" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_184" data-name="Path 184" d="M22.5,4.5h12v12" transform="translate(5.996 0)" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_185" data-name="Path 185" d="M15,26.507,37.007,4.5" transform="translate(3.493 0)" fill="none" stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </svg>
+);

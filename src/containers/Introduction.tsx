@@ -21,11 +21,7 @@ const BackgroundDecorationWrapper = styled.div`
   right: 40px;
 `;
 
-interface IntroductionProps {
-
-}
-
-const Introduction = ({ }: IntroductionProps) => {
+const Introduction = () => {
   return (
     <>
       <BrowserView>
@@ -38,7 +34,7 @@ const Introduction = ({ }: IntroductionProps) => {
           <Label type={LabelType.SUB_HEADER} color={colors.lightPurple}>DEVELOPER & DEVOPS 👨‍💻</Label>
           <Label>I’m a design-minded developer with a love for DevOps, based in Copenhagen, Denmark.</Label>
           
-          <Button handleOnClick={() => {}} style={{ marginTop: 32 }}>SEE MY WORK</Button>
+          <Button href="#projects" style={{ marginTop: 32 }}>SEE MY WORK</Button>
           <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 32 }}/>
           
           <CopyEmail email={'thomas@payshare.dk'} style={{ marginTop: 80 }}/>

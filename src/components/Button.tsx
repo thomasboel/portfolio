@@ -32,17 +32,19 @@ const Backdrop = styled.div`
 
 interface ButtonProps {
   children: any;
-  handleOnClick(): void;
+  href: string;
   style?: any;
 }
 
-const Button = ({ children, handleOnClick, style }: ButtonProps) => {
+const Button = ({ children, href, style }: ButtonProps) => {
   
   return (
-    <Wrapper style={style} onClick={() => handleOnClick()}>
-      <ButtonText>{children}</ButtonText>
-      <Backdrop />
-    </Wrapper>
+    <a href={href}>
+      <Wrapper style={style}>
+        <ButtonText>{children}</ButtonText>
+        <Backdrop />
+      </Wrapper>
+    </a>
   );
 }
 
