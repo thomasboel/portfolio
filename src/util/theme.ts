@@ -1,6 +1,4 @@
-import { css } from 'styled-components';
-
-export const color = {
+export const colors = {
   purple: '#541388',
   lightPurple: '#A288E3',
   red: '#DE3C4B',

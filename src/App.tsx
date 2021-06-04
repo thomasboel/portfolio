@@ -7,12 +7,12 @@ import Projects from './containers/Projects';
 import Contact from './containers/Contact';
 import Footer from './containers/Footer';
 
-import { color } from './util/theme';
+import { colors } from './util/theme';
 
 const Wrapper = styled.div`
   flex: 1;
   min-height: 100vh;
-  background-color: ${color.purple};
+  background-color: ${colors.purple};
 `;
 
 const App = () => {
