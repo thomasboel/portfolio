@@ -20,6 +20,11 @@ const Wrapper = styled.header`
   `};
 `;
 
+const BurgerWrapper = styled.div`
+  position: fixed;
+  z-index: 2;
+`;
+
 interface ContainerTemplateProps {
   showMenu: boolean;
   setShowMenu(value: boolean): void;
@@ -33,8 +38,10 @@ const ContainerTemplate = ({ showMenu, setShowMenu }: ContainerTemplateProps) =>
       
       </BrowserView>
       <MobileView>
-        <Wrapper>
-          <BurgerIcon active={showMenu} handleOnClick={() => setShowMenu(!showMenu)} />
+        <Wrapper id="home">
+          <BurgerWrapper>
+            <BurgerIcon active={showMenu} handleOnClick={() => setShowMenu(!showMenu)} />
+          </BurgerWrapper>
         </Wrapper>
       </MobileView>
     </>

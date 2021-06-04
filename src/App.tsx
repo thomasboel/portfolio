@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import Menu from './containers/Menu';
 import Header from './containers/Header';
 import Introduction from './containers/Introduction';
 import Projects from './containers/Projects';
@@ -20,6 +21,8 @@ const App = () => {
 
   return (
     <Wrapper>
+
+      {showMenu && <Menu closeMenu={() => setShowMenu(false)} />}
 
       <Header showMenu={showMenu} setShowMenu={setShowMenu} />
 

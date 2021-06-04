@@ -63,6 +63,8 @@ const MenuHeader = styled.h2<Props>`
   color: ${props => props.color};
   letter-spacing: .040em;
   font-size: 16px;
+  font-weight: 300;
+  margin-block-start: 8px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
 `;
@@ -71,6 +73,8 @@ const MenuParagraph = styled.h3<Props>`
   color: ${props => props.color};
   letter-spacing: .040em;
   font-size: 20px;
+  font-weight: 300;
+  margin-block-start: 24px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
 `;

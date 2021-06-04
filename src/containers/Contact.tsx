@@ -5,7 +5,7 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import Label, { LabelType } from '../components/Label';
 import Pokemon, { Pokemons } from '../components/Pokemon';
 
-import { GitHubIcon, LinkedInIcon, PhoneIcon, DiscordIcon } from '../util/icons';
+import { GitHubIcon, LinkedInIcon, PhoneIcon, DiscordIcon, MailIcon } from '../util/icons';
 import CopyEmail from '../components/CopyEmail';
 
 const Wrapper = styled.div`
@@ -22,7 +22,7 @@ const FlexRow = styled.div`
   flex-direction: row;
 `;
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
   margin-right: 32px;
 
   &:last-child {
@@ -35,7 +35,7 @@ interface Link {
   icon: JSX.Element;
 }
 
-const contactOptions: Array<Link> = [
+export const contactOptions: Array<Link> = [
   { 
     url: "https://github.com/thomasboel",
     icon: <GitHubIcon />
@@ -49,6 +49,10 @@ const contactOptions: Array<Link> = [
     icon: <PhoneIcon />
   },
   { 
+    url: "mailto:thomas@payshare.dk",
+    icon: <MailIcon />
+  },
+  { 
     url: "https://discordapp.com/users/190577521367056394",
     icon: <DiscordIcon />
   }
@@ -59,7 +63,7 @@ const Contact = () => {
   const ContactIcons = () => (
     <FlexRow style={{ marginTop: 24 }}>
 
-      {contactOptions.map((contact, index) => (
+      {contactOptions.map((contact, index) => !contact.url.includes('mailto') && (
         <IconWrapper key={index}>
             <a href={contact.url}>
             {contact.icon}
@@ -76,7 +80,7 @@ const Contact = () => {
       
       </BrowserView>
       <MobileView>
-        <Wrapper>
+        <Wrapper id="contact">
 
           <FlexRow>
             <Pokemon pokemon={Pokemons.STARYU} style={{ marginRight: 24 }} />

@@ -3,17 +3,22 @@ import styled from 'styled-components';
 
 import {
   Ditto,
+  MasterBall,
   Phanpy,
   Staryu
 } from '../util/icons';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  small: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 72px;
-  height: 72px;
+  width: ${props => props.small ? 40 : 72}px;
+  height: ${props => props.small ? 40 : 72}px;
 `;
 
 export enum Pokemons {
@@ -25,10 +30,11 @@ export enum Pokemons {
 
 interface PokemonProps {
   pokemon: Pokemons;
+  small?: boolean;
   style?: any;
 }
 
-const Pokemon = ({ pokemon, style }: PokemonProps) => {
+const Pokemon = ({ pokemon, small=false, style }: PokemonProps) => {
   
   const WhoIsThatPokemon = () => {
     switch (pokemon) {
@@ -38,13 +44,15 @@ const Pokemon = ({ pokemon, style }: PokemonProps) => {
         return <Phanpy />
       case Pokemons.STARYU:
         return <Staryu />
+      case Pokemons.MASTER_BALL:
+        return <MasterBall />
       default:
         return <Ditto />
     }
   }
 
   return (
-    <Wrapper style={style}>
+    <Wrapper small={small} style={style}>
       <WhoIsThatPokemon />
     </Wrapper>
   );
