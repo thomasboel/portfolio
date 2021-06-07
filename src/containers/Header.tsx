@@ -16,7 +16,9 @@ const Wrapper = styled.header`
   height: 88px;
 
   ${media(sizes.tablet)`
-    height: 104px;
+    height: 64px;
+    padding: 40px 120px 0 120px;
+    align-items: flex-start;
   `};
 `;
 
@@ -35,7 +37,11 @@ const ContainerTemplate = ({ showMenu, setShowMenu }: ContainerTemplateProps) =>
   return (
     <>
       <BrowserView>
-      
+        <Wrapper id="home">
+          <BurgerWrapper>
+            <BurgerIcon active={showMenu} handleOnClick={() => setShowMenu(!showMenu)} />
+          </BurgerWrapper>
+        </Wrapper>
       </BrowserView>
       <MobileView>
         <Wrapper id="home">

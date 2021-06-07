@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { media, sizes } from '../util/theme';
 import {
   Ditto,
   MasterBall,
@@ -19,6 +20,11 @@ const Wrapper = styled.div<WrapperProps>`
 
   width: ${props => props.small ? 40 : 72}px;
   height: ${props => props.small ? 40 : 72}px;
+
+  ${media(sizes.tablet)`
+    width: 120px;
+    height: 120px;
+  `};
 `;
 
 export enum Pokemons {

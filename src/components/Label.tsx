@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { colors } from '../util/theme';
+import { media, sizes } from '../util/theme';
 
 interface Props {
   rtl: boolean;
@@ -15,6 +16,11 @@ const Header = styled.h1<Props>`
   margin-block-start: 24px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 70px;
+    margin-block-start: 32px;
+  `};
 `;
 
 const ProjectHeader = styled.h2<Props>`
@@ -27,6 +33,11 @@ const ProjectHeader = styled.h2<Props>`
   white-space: pre-wrap;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 50px;
+    /*margin-block-start: 16px;*/
+  `};
 `;
 
 const SubHeader = styled.h3<Props>`
@@ -37,6 +48,11 @@ const SubHeader = styled.h3<Props>`
   margin-block-start: 24px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 30px;
+    margin-block-start: 40px;
+  `};
 `;
 
 const ProjectSubHeader = styled.h4<Props>`
@@ -46,6 +62,10 @@ const ProjectSubHeader = styled.h4<Props>`
   font-weight: 300;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 24px;
+  `};
 `;
 
 const Paragraph = styled.p<Props>`
@@ -57,6 +77,12 @@ const Paragraph = styled.p<Props>`
   white-space: pre-wrap;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 20px;
+    line-height: 40px;
+    margin-block-start: 24px;
+  `};
 `;
 
 const MenuHeader = styled.h2<Props>`
@@ -67,6 +93,10 @@ const MenuHeader = styled.h2<Props>`
   margin-block-start: 8px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 24px;
+  `};
 `;
 
 const MenuParagraph = styled.h3<Props>`
@@ -77,6 +107,10 @@ const MenuParagraph = styled.h3<Props>`
   margin-block-start: 24px;
 
   text-align: ${props => props.rtl ? 'right' : 'left'};
+
+  ${media(sizes.tablet)`
+    font-size: 30px;
+  `};
 `;
 
 export enum LabelType {

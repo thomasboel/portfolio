@@ -1,5 +1,6 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { colors, media, sizes } from './theme';
 
 export const Ditto = () => isMobile ? (
   <svg width="67.535" height="72" viewBox="0 0 67.535 72">
@@ -231,7 +232,44 @@ export const MasterBall = () => isMobile ? (
       <path id="Path_182" data-name="Path 182" d="M205.246,163.253a1.116,1.116,0,0,1-1-.618l-1.1-2.191-.888,1.333a1.16,1.16,0,0,1-1.861,0l-.887-1.333-1.1,2.191a1.118,1.118,0,0,1-2-1l1.957-3.914a1.119,1.119,0,0,1,1.93-.12l1.026,1.54,1.027-1.54a1.119,1.119,0,0,1,1.93.12l1.957,3.914a1.117,1.117,0,0,1-1,1.618Zm0,0" transform="translate(-159.452 -130.126)" fill="#101010"/>
     </g>
   </svg>
-)
+);
+
+interface BurgerMenuIconProps {
+  active: boolean;
+  color?: string;
+}
+
+export const BurgerMenuIcon = ({ active, color=colors.lightPurple }: BurgerMenuIconProps) => isMobile ? active ? (
+  <svg width="40" height="29" viewBox="0 0 40 29">
+    <g id="BurgerIconClose" transform="translate(-295 -53)">
+      <g id="x" transform="translate(0 10)">
+        <rect id="top" width="30" height="3" rx="1.5" transform="translate(303.333 67.046) rotate(-45)" fill="#f4f4f4"/>
+        <rect id="bottom" width="30" height="3" rx="1.5" transform="translate(305.454 45.832) rotate(45)" fill="#f4f4f4"/>
+      </g>
+      <rect id="boxing" width="40" height="29" transform="translate(295 53)" fill="none"/>
+    </g>
+  </svg>
+) : (
+  <svg width="40" height="29" viewBox="0 0 40 29">
+    <g id="BurgerIcon" transform="translate(-295 -56)">
+      <rect id="bottom" width="30" height="3" rx="1.5" transform="translate(300 82)" fill="#a288e3"/>
+      <rect id="middle" width="40" height="3" rx="1.5" transform="translate(295 69)" fill="#a288e3"/>
+      <rect id="top" width="30" height="3" rx="1.5" transform="translate(300 56)" fill="#a288e3"/>
+    </g>
+  </svg>
+) : active ? (
+  <svg id="BurgerIconClose" width="80" height="46.67" viewBox="0 0 80 46.67">
+    <rect id="Rectangle_2197" data-name="Rectangle 2197" width="80" height="6" rx="3" transform="translate(0 20.669)" fill={color} opacity="0"/>
+    <rect id="Rectangle_2198" data-name="Rectangle 2198" width="60" height="6" rx="3" transform="translate(24.665 42.426) rotate(-45)" fill={color}/>
+    <rect id="Rectangle_2199" data-name="Rectangle 2199" width="60" height="6" rx="3" transform="translate(28.908 0) rotate(45)" fill={color}/>
+  </svg>
+) : (
+  <svg id="BurgerIcon" width="80" height="50" viewBox="0 0 80 50">
+    <rect id="Rectangle_2197" data-name="Rectangle 2197" width="80" height="6" rx="3" transform="translate(0 22)" fill={color}/>
+    <rect id="Rectangle_2198" data-name="Rectangle 2198" width="60" height="6" rx="3" transform="translate(10)" fill={color}/>
+    <rect id="Rectangle_2199" data-name="Rectangle 2199" width="60" height="6" rx="3" transform="translate(10 44)" fill={color}/>
+  </svg>
+);
 
 interface CopyIconProps {
   color: string;
@@ -240,13 +278,22 @@ interface CopyIconProps {
 export const CopyIcon = ({ color }: CopyIconProps) => isMobile ? (
   <svg width="18.008" height="20.676" viewBox="0 0 18.008 20.676">
     <g id="CopyIcon" transform="translate(-37.306 -741.662)">
-      <path id="Icon_material-content-copy" data-name="Icon material-content-copy" d="M14.8,1.5H4.685A1.7,1.7,0,0,0,3,3.2V15.082H4.685V3.2H14.8Zm2.528,3.4H8.055a1.7,1.7,0,0,0-1.685,1.7V18.478a1.7,1.7,0,0,0,1.685,1.7h9.268a1.7,1.7,0,0,0,1.685-1.7V6.593A1.7,1.7,0,0,0,17.323,4.9Zm0,13.582H8.055V6.593h9.268Z" transform="translate(34.306 740.162)" fill="#de3c4b"/>
-      <path id="Icon_material-content-copy-2" data-name="Icon material-content-copy" d="M14.8,1.5H4.685A1.7,1.7,0,0,0,3,3.2V15.082H4.685V3.2H14.8Zm2.528,3.4H8.055a1.7,1.7,0,0,0-1.685,1.7V18.478a1.7,1.7,0,0,0,1.685,1.7h9.268a1.7,1.7,0,0,0,1.685-1.7V6.593A1.7,1.7,0,0,0,17.323,4.9Zm0,13.582H8.055V6.593h9.268Z" transform="translate(36.306 742.162)" fill="#de3c4b" opacity="0.2"/>
+      <path id="Icon_material-content-copy" data-name="Icon material-content-copy" d="M14.8,1.5H4.685A1.7,1.7,0,0,0,3,3.2V15.082H4.685V3.2H14.8Zm2.528,3.4H8.055a1.7,1.7,0,0,0-1.685,1.7V18.478a1.7,1.7,0,0,0,1.685,1.7h9.268a1.7,1.7,0,0,0,1.685-1.7V6.593A1.7,1.7,0,0,0,17.323,4.9Zm0,13.582H8.055V6.593h9.268Z" transform="translate(34.306 740.162)" fill={color}/>
+      <path id="Icon_material-content-copy-2" data-name="Icon material-content-copy" d="M14.8,1.5H4.685A1.7,1.7,0,0,0,3,3.2V15.082H4.685V3.2H14.8Zm2.528,3.4H8.055a1.7,1.7,0,0,0-1.685,1.7V18.478a1.7,1.7,0,0,0,1.685,1.7h9.268a1.7,1.7,0,0,0,1.685-1.7V6.593A1.7,1.7,0,0,0,17.323,4.9Zm0,13.582H8.055V6.593h9.268Z" transform="translate(36.306 742.162)" fill={color} opacity="0.2"/>
     </g>
   </svg>
 ) : (
   <svg width="21.15" height="24.675" viewBox="0 0 21.15 24.675">
-    <path id="Icon_material-content-copy" data-name="Icon material-content-copy" d="M18.585,1.5H5.226A2.241,2.241,0,0,0,3,3.743v15.7H5.226V3.743H18.585Zm3.34,4.486H9.679A2.241,2.241,0,0,0,7.453,8.23v15.7a2.241,2.241,0,0,0,2.226,2.243H21.924a2.241,2.241,0,0,0,2.226-2.243V8.23A2.241,2.241,0,0,0,21.924,5.986Zm0,17.946H9.679V8.23H21.924Z" transform="translate(-3 -1.5)" fill="#f4f4f4"/>
+    <path id="Icon_material-content-copy" data-name="Icon material-content-copy" d="M18.585,1.5H5.226A2.241,2.241,0,0,0,3,3.743v15.7H5.226V3.743H18.585Zm3.34,4.486H9.679A2.241,2.241,0,0,0,7.453,8.23v15.7a2.241,2.241,0,0,0,2.226,2.243H21.924a2.241,2.241,0,0,0,2.226-2.243V8.23A2.241,2.241,0,0,0,21.924,5.986Zm0,17.946H9.679V8.23H21.924Z" transform="translate(-3 -1.5)" fill={color}/>
+  </svg>
+);
+
+export const MailIconSmallDesktop = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="27.384" height="21.679" viewBox="0 0 27.384 21.679">
+    <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(-1.607 -5)">
+      <path id="Path_156" data-name="Path 156" d="M5.46,6H25.139A2.467,2.467,0,0,1,27.6,8.46V23.219a2.467,2.467,0,0,1-2.46,2.46H5.46A2.467,2.467,0,0,1,3,23.219V8.46A2.467,2.467,0,0,1,5.46,6Z" fill="none" stroke="#a288e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_157" data-name="Path 157" d="M27.6,9,15.3,17.609,3,9" transform="translate(0 -0.54)" fill="none" stroke="#a288e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
   </svg>
 );
 

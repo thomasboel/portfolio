@@ -7,10 +7,15 @@ import Pokemon, { Pokemons } from '../components/Pokemon';
 import Project from '../components/Project';
 
 import { ExternalLinkIcon, GitHubIcon } from '../util/icons';
+import { media, sizes } from '../util/theme';
 
 const Wrapper = styled.section`
   padding: 0 24px 0 24px;
   margin-top: 120px;
+
+  ${media(sizes.tablet)`
+    padding: 0 80px 0 80px;
+  `};
 `;
 
 const FlexRow = styled.div`
@@ -83,10 +88,18 @@ const Projects = () => {
   return (
     <>
       <BrowserView>
-      
+        <Wrapper id="projects">
+          
+        <FlexRow>
+          <Label type={LabelType.HEADER}>PROJECTS</Label>
+          <Pokemon pokemon={Pokemons.PHANPY} style={{ marginLeft: 48 }}/>
+        </FlexRow>
+
+        </Wrapper>
       </BrowserView>
       <MobileView>
         <Wrapper id="projects">
+
           <FlexRow>
             <Label type={LabelType.HEADER}>PROJECTS</Label>
             <Pokemon pokemon={Pokemons.PHANPY} style={{ marginLeft: 24 }}/>
@@ -97,6 +110,7 @@ const Projects = () => {
               <Project key={index} project={project} style={{ marginTop: index === 0 ? 32 : 56 }}/>
             ))}
           </ProjectsWrapper>
+
         </Wrapper>
       </MobileView>
     </>
