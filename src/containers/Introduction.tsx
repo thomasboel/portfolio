@@ -39,7 +39,7 @@ const Introduction = () => {
           <Button href="#projects" style={{ marginTop: 56 }}>SEE MY WORK</Button>
           <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 40 }}/>
 
-          <CopyEmail email={'thomas@payshare.dk'} style={{ marginTop: 80 }} />
+          <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 80 }} />
 
         </Wrapper>
       </BrowserView>
@@ -55,7 +55,7 @@ const Introduction = () => {
           <Button href="#projects" style={{ marginTop: 32 }}>SEE MY WORK</Button>
           <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 32 }}/>
           
-          <CopyEmail email={'thomas@payshare.dk'} style={{ marginTop: 80 }}/>
+          <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 80 }}/>
           
           <BackgroundDecorationWrapper>
             <BackgroundDecoration />

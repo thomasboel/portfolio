@@ -49,7 +49,7 @@ export const contactOptions: Array<Link> = [
     icon: <PhoneIcon />
   },
   { 
-    url: "mailto:thomas@payshare.dk",
+    url: "mailto:thomas@boelmicheelsen.dk",
     icon: <MailIcon />
   },
   { 
@@ -95,7 +95,7 @@ const Contact = () => {
 
           <Label rtl type={LabelType.SUB_HEADER}>Or via my mail...</Label>
 
-          <CopyEmail email={'thomas@payshare.dk'} style={{ marginTop: 16 }} />
+          <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 16 }} />
           
         </Wrapper>
       </MobileView>
