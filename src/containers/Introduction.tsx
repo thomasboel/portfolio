@@ -23,6 +23,11 @@ const BackgroundDecorationWrapper = styled.div`
   position: absolute;
   top: 152px;
   right: 40px;
+
+  ${media(sizes.tablet)`
+    top: -260px;
+    right: 64px;
+  `};
 `;
 
 const Introduction = () => {
@@ -40,6 +45,10 @@ const Introduction = () => {
           <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 40 }}/>
 
           <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 80 }} />
+
+          <BackgroundDecorationWrapper>
+            <BackgroundDecoration />
+          </BackgroundDecorationWrapper>
 
         </Wrapper>
       </BrowserView>

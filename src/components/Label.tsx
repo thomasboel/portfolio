@@ -36,6 +36,7 @@ const ProjectHeader = styled.h2<Props>`
 
   ${media(sizes.tablet)`
     font-size: 50px;
+    line-height: 60px;
     /*margin-block-start: 16px;*/
   `};
 `;

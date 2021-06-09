@@ -7,6 +7,7 @@ import Pokemon, { Pokemons } from '../components/Pokemon';
 
 import { GitHubIcon, LinkedInIcon, PhoneIcon, DiscordIcon, MailIcon } from '../util/icons';
 import CopyEmail from '../components/CopyEmail';
+import { colors } from '../util/theme';
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ interface Link {
 export const contactOptions: Array<Link> = [
   { 
     url: "https://github.com/thomasboel",
-    icon: <GitHubIcon />
+    icon: <GitHubIcon color={colors.white} />
   },
   { 
     url: "https://www.linkedin.com/in/thomas-boel-micheelsen-72502514b/",
