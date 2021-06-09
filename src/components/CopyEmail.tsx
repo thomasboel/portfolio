@@ -67,30 +67,27 @@ const CopyEmail = ({ email, style }: CopyEmailProps) => {
   return (
     <>
       <BrowserView>
-        <a onClick={() => navigator.clipboard.writeText(email)}>
-          <Wrapper
-            onMouseEnter={() => setHover(true)} 
-            onMouseLeave={() => setHover(false)} 
-            style={style}
-          >
-            <IconWrapper>
-              {hover 
-              ? <CopyIcon color={colors.red} />
-              : <MailIconSmallDesktop color={colors.lightPurple} />}
-            </IconWrapper>
-            <Email color={hover ? colors.white : colors.lightPurple}>{email}</Email>
-          </Wrapper>
-        </a>
+        <Wrapper
+          onMouseEnter={() => setHover(true)} 
+          onMouseLeave={() => setHover(false)} 
+          onClick={() => navigator.clipboard.writeText(email)}
+          style={style}
+        >
+          <IconWrapper>
+            {hover 
+            ? <CopyIcon color={colors.red} />
+            : <MailIconSmallDesktop color={colors.lightPurple} />}
+          </IconWrapper>
+          <Email color={hover ? colors.white : colors.lightPurple}>{email}</Email>
+        </Wrapper>
       </BrowserView>
       <MobileView>
-        <a onClick={() => navigator.clipboard.writeText(email)}>
-        <Wrapper style={style}>
+        <Wrapper onClick={() => navigator.clipboard.writeText(email)} style={style}>
           <IconWrapper>
             <CopyIcon color={colors.red} />
           </IconWrapper>
           <Email>{email}</Email>
         </Wrapper>
-        </a>
       </MobileView>
     </>
   );

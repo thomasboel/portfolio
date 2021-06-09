@@ -1,6 +1,6 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
-import { colors, media, sizes } from './theme';
+import { colors } from './theme';
 
 interface Color {
   color: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserView, MobileView, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import Label, { LabelType } from '../components/Label';
 import Pokemon, { Pokemons } from '../components/Pokemon';
