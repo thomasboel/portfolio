@@ -112,6 +112,7 @@ const MenuParagraph = styled.h3<Props>`
 
   ${media(sizes.tablet)`
     font-size: 30px;
+    margin-block-start: 48px;
   `};
 `;
 
