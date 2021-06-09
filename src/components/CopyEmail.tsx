@@ -11,14 +11,18 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   
-  width: 220px;
+  width: 240px;
   height: 40px;
 
   border: 3px solid ${colors.lightPurple};
 
   ${media(sizes.tablet)`
-    width: 400px;
+    width: 440px;
     height: 60px;
+
+    &:hover {
+      cursor: pointer;
+    }
   `};
 `;
 
@@ -63,7 +67,7 @@ const CopyEmail = ({ email, style }: CopyEmailProps) => {
   return (
     <>
       <BrowserView>
-        <a href={'mailto:'+email}>
+        <a onClick={() => navigator.clipboard.writeText(email)}>
           <Wrapper
             onMouseEnter={() => setHover(true)} 
             onMouseLeave={() => setHover(false)} 
@@ -72,14 +76,14 @@ const CopyEmail = ({ email, style }: CopyEmailProps) => {
             <IconWrapper>
               {hover 
               ? <CopyIcon color={colors.red} />
-              : <MailIconSmallDesktop />}
+              : <MailIconSmallDesktop color={colors.lightPurple} />}
             </IconWrapper>
             <Email color={hover ? colors.white : colors.lightPurple}>{email}</Email>
           </Wrapper>
         </a>
       </BrowserView>
       <MobileView>
-        <a href={'mailto:'+email}>
+        <a onClick={() => navigator.clipboard.writeText(email)}>
         <Wrapper style={style}>
           <IconWrapper>
             <CopyIcon color={colors.red} />

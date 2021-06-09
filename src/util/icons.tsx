@@ -2,6 +2,10 @@ import React from 'react';
 import { isMobile } from 'react-device-detect';
 import { colors, media, sizes } from './theme';
 
+interface Color {
+  color: string;
+}
+
 export const Ditto = () => isMobile ? (
   <svg width="67.535" height="72" viewBox="0 0 67.535 72">
     <g id="Ditto" transform="translate(-16.221 0.001)">
@@ -271,11 +275,7 @@ export const BurgerMenuIcon = ({ active, color=colors.lightPurple }: BurgerMenuI
   </svg>
 );
 
-interface CopyIconProps {
-  color: string;
-}
-
-export const CopyIcon = ({ color }: CopyIconProps) => isMobile ? (
+export const CopyIcon = ({ color }: Color) => isMobile ? (
   <svg width="18.008" height="20.676" viewBox="0 0 18.008 20.676">
     <g id="CopyIcon" transform="translate(-37.306 -741.662)">
       <path id="Icon_material-content-copy" data-name="Icon material-content-copy" d="M14.8,1.5H4.685A1.7,1.7,0,0,0,3,3.2V15.082H4.685V3.2H14.8Zm2.528,3.4H8.055a1.7,1.7,0,0,0-1.685,1.7V18.478a1.7,1.7,0,0,0,1.685,1.7h9.268a1.7,1.7,0,0,0,1.685-1.7V6.593A1.7,1.7,0,0,0,17.323,4.9Zm0,13.582H8.055V6.593h9.268Z" transform="translate(34.306 740.162)" fill={color}/>
@@ -288,11 +288,11 @@ export const CopyIcon = ({ color }: CopyIconProps) => isMobile ? (
   </svg>
 );
 
-export const MailIconSmallDesktop = () => (
+export const MailIconSmallDesktop = ({ color }: Color) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="27.384" height="21.679" viewBox="0 0 27.384 21.679">
     <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(-1.607 -5)">
-      <path id="Path_156" data-name="Path 156" d="M5.46,6H25.139A2.467,2.467,0,0,1,27.6,8.46V23.219a2.467,2.467,0,0,1-2.46,2.46H5.46A2.467,2.467,0,0,1,3,23.219V8.46A2.467,2.467,0,0,1,5.46,6Z" fill="none" stroke="#a288e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-      <path id="Path_157" data-name="Path 157" d="M27.6,9,15.3,17.609,3,9" transform="translate(0 -0.54)" fill="none" stroke="#a288e3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_156" data-name="Path 156" d="M5.46,6H25.139A2.467,2.467,0,0,1,27.6,8.46V23.219a2.467,2.467,0,0,1-2.46,2.46H5.46A2.467,2.467,0,0,1,3,23.219V8.46A2.467,2.467,0,0,1,5.46,6Z" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_157" data-name="Path 157" d="M27.6,9,15.3,17.609,3,9" transform="translate(0 -0.54)" fill="none" stroke={color} stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
     </g>
   </svg>
 );
