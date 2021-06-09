@@ -33,7 +33,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${media(sizes.tablet)`
+  ${media(sizes.widescreen)`
     flex-direction: row;
     align-items: flex-start;
   `};
