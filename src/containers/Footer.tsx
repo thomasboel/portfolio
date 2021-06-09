@@ -18,11 +18,13 @@ const Footer = () => {
   return (
     <>
       <BrowserView>
-      
+        <Wrapper>
+          <Label color={colors.lightPurple}>© 2021 BOELMICHEELSEN.DK</Label>
+        </Wrapper>
       </BrowserView>
       <MobileView>
         <Wrapper>
-          <Label color={colors.lightPurple}>© 2021 THOMASBOELMICHEELSEN.DK</Label>
+          <Label color={colors.lightPurple}>© 2021 BOELMICHEELSEN.DK</Label>
         </Wrapper>
       </MobileView>
     </>

@@ -6,6 +6,7 @@ import { media, sizes } from '../util/theme';
 
 interface Props {
   rtl: boolean;
+  center: boolean;
 }
 
 const Header = styled.h1<Props>`
@@ -15,7 +16,7 @@ const Header = styled.h1<Props>`
   font-weight: 300;
   margin-block-start: 24px;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 70px;
@@ -32,7 +33,7 @@ const ProjectHeader = styled.h2<Props>`
   margin-block-start: 24px;
   white-space: pre-wrap;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 50px;
@@ -48,7 +49,7 @@ const SubHeader = styled.h3<Props>`
   font-weight: 300;
   margin-block-start: 24px;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 30px;
@@ -62,7 +63,7 @@ const ProjectSubHeader = styled.h4<Props>`
   font-size: 16px;
   font-weight: 300;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 24px;
@@ -77,7 +78,7 @@ const Paragraph = styled.p<Props>`
   margin-block-start: 16px;
   white-space: pre-wrap;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 20px;
@@ -93,7 +94,7 @@ const MenuHeader = styled.h2<Props>`
   font-weight: 300;
   margin-block-start: 8px;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 24px;
@@ -107,7 +108,7 @@ const MenuParagraph = styled.h3<Props>`
   font-weight: 300;
   margin-block-start: 24px;
 
-  text-align: ${props => props.rtl ? 'right' : 'left'};
+  text-align: ${props => props.center ? 'center' : props.rtl ? 'right' : 'left'};
 
   ${media(sizes.tablet)`
     font-size: 30px;
@@ -129,9 +130,10 @@ interface LabelProps {
   type?: LabelType;
   color?: string;
   rtl?: boolean;
+  center?: boolean;
 }
 
-const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=false }: LabelProps) => {
+const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=false, center=false }: LabelProps) => {
   
   switch (type) {
     case LabelType.HEADER:
@@ -139,6 +141,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <Header 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</Header>
       );
     case LabelType.PROJECT_HEADER:
@@ -146,6 +149,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <ProjectHeader 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</ProjectHeader>
       );
     case LabelType.SUB_HEADER:
@@ -153,6 +157,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <SubHeader 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</SubHeader>
       );
     case LabelType.PROJECT_SUB_HEADER:
@@ -160,6 +165,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <ProjectSubHeader 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</ProjectSubHeader>
       );
     case LabelType.PARAGRAPH:
@@ -167,6 +173,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <Paragraph 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</Paragraph>
       );
     case LabelType.MENU_HEADER:
@@ -174,6 +181,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <MenuHeader 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</MenuHeader>
       );
     case LabelType.MENU_PARAGRAPH:
@@ -181,6 +189,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <MenuParagraph 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</MenuParagraph>
       );
 
@@ -189,6 +198,7 @@ const Label = ({ children, type=LabelType.PARAGRAPH, color=colors.white, rtl=fal
         <Paragraph 
           color={color}
           rtl={rtl}
+          center={center}
         >{children}</Paragraph>
       );
   }
