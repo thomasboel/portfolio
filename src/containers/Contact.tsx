@@ -7,19 +7,15 @@ import Pokemon, { Pokemons } from '../components/Pokemon';
 
 import { GitHubIcon, LinkedInIcon, PhoneIcon, DiscordIcon, MailIcon } from '../util/icons';
 import CopyEmail from '../components/CopyEmail';
-import { colors, media, sizes } from '../util/theme';
+import { colors } from '../util/theme';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 
   padding: 0 24px 0 24px;
   margin-top: 80px;
-
-  ${media(sizes.tablet)`
-    align-items: center;
-  `};
 `;
 
 const FlexRow = styled.div`
@@ -122,7 +118,7 @@ const Contact = () => {
 
           <Label rtl type={LabelType.SUB_HEADER}>Let's get in touch!</Label>
 
-          <Label rtl>{"You can catch me on LinkedIn\nOr check out all my projects at GitHub\nOld-fashioned? Call me at +45 51 30 55 16"}</Label>
+          <Label center>{"You can catch me on LinkedIn\nOr check out all my projects at GitHub\nOld-fashioned? Call me at +45 51 30 55 16"}</Label>
 
           <ContactIcons style={{ marginTop: 24 }} />
 

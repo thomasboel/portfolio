@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   flex: 1;
   min-height: 100vh;
   background-color: ${colors.purple};
+  overflow: hidden;
 `;
 
 const App = () => {

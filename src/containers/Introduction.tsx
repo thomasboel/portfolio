@@ -23,10 +23,11 @@ const BackgroundDecorationWrapper = styled.div`
   position: absolute;
   top: 152px;
   right: 40px;
+  z-index: 0;
 
   ${media(sizes.tablet)`
     top: -260px;
-    right: 64px;
+    right: 120px;
   `};
 `;
 

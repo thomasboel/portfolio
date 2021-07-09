@@ -1,6 +1,7 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 import { colors } from './theme';
+import repeatable from '../assets/Repeatable.png';
 
 interface Color {
   color: string;
@@ -317,22 +318,32 @@ export const BackgroundDecoration = () => isMobile ? (
     </g>
   </svg>
 ) : (
-  <svg width="457.344" height="1401" viewBox="0 0 457.344 1401">
-    <g id="BackgroundDecorationDesktop" transform="translate(-1400.375 111)">
-      <path id="Path_47" data-name="Path 47" d="M-10536,7585v300.405s5.59,100.085-94.439,100.013-96.678-100.013-96.678-100.013-2.068-100.8,96.678-100.164" transform="translate(12388.631 -7595.5)" fill="none" stroke="#de3c4b" stroke-width="10"/>
-      <g id="Rectangle_2183" data-name="Rectangle 2183" transform="translate(1401 289)" fill="none" stroke="#a288e3" stroke-width="10">
-        <rect width="200" height="400" rx="100" stroke="none"/>
-        <rect x="5" y="5" width="190" height="390" rx="95" fill="none"/>
-      </g>
-      <path id="Path_48" data-name="Path 48" d="M-10727.074,7985.418V7685.013s-5.59-100.085,94.439-100.013,96.678,100.013,96.678,100.013,2.068,100.8-96.678,100.164" transform="translate(12132.537 -6796)" fill="none" stroke="#de3c4b" stroke-width="10"/>
-      <g id="Rectangle_2190" data-name="Rectangle 2190" transform="translate(1657 890)" fill="none" stroke="#a288e3" stroke-width="10">
-        <rect width="200" height="400" rx="100" stroke="none"/>
-        <rect x="5" y="5" width="190" height="390" rx="95" fill="none"/>
-      </g>
-      <rect id="Rectangle_2191" data-name="Rectangle 2191" width="10" height="300" rx="5" transform="translate(1757 490)" fill="#a288e3"/>
-      <rect id="Rectangle_2192" data-name="Rectangle 2192" width="10" height="300" rx="5" transform="translate(1496 -111)" fill="#de3c4b"/>
-    </g>
-  </svg>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column'
+  }}>
+    <img 
+      src={repeatable} 
+      alt=""
+      style={{ 
+        opacity: .4
+      }} 
+    />
+    <img 
+      src={repeatable} 
+      alt=""
+      style={{ 
+        opacity: .4
+      }} 
+    />
+    <img 
+      src={repeatable} 
+      alt=""
+      style={{ 
+        opacity: .4
+      }} 
+    />
+  </div>
 );
 
 export const GitHubIcon = ({ color }: Color) => isMobile ? (
