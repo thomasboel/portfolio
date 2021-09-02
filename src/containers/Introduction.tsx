@@ -25,6 +25,10 @@ const BackgroundDecorationWrapper = styled.div`
   right: 40px;
   z-index: 0;
 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
   ${media(sizes.tablet)`
     top: -260px;
     right: 120px;

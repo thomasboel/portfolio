@@ -84,7 +84,7 @@ const Contact = () => {
       <BrowserView>
         <Wrapper id="contact">
 
-        <FlexRow>
+          <FlexRow>
             <Pokemon pokemon={Pokemons.STARYU} style={{ marginRight: 24 }} />
             <Label type={LabelType.HEADER}>LIKE WHAT YOU SEE?</Label>
           </FlexRow>

@@ -126,6 +126,9 @@ const Project = ({ project, style }: ProjectProps) => {
           onMouseLeave={() => setHover(false)}
           hover={hover}
           style={style}
+          onClick={() => {
+            if (project.links.length === 1) { window.open(project.links[0].url, '_blank') }
+          }}
         >
 
           <Indentation>
@@ -167,7 +170,12 @@ const Project = ({ project, style }: ProjectProps) => {
 
       </BrowserView>
       <MobileView>
-        <MobileWrapper style={style}>
+        <MobileWrapper 
+          onClick={() => {
+            if (project.links.length === 1) { window.open(project.links[0].url, '_blank') }
+          }}
+          style={style}
+        >
 
           <Indentation>
 

@@ -6,6 +6,8 @@ import Label, { LabelType } from '../components/Label';
 import Pokemon, { Pokemons } from '../components/Pokemon';
 import Project from '../components/Project';
 
+import { useWindowSize } from '../hooks/useWindowSize';
+
 import { ExternalLinkIcon, GitHubIcon } from '../util/icons';
 import { media, sizes } from '../util/theme';
 
@@ -95,7 +97,8 @@ const projects: Array<ProjectData> = [
 ];
 
 const Projects = () => {
-  
+  const [ width, height ] = useWindowSize();
+
   return (
     <>
       <BrowserView>
@@ -106,17 +109,41 @@ const Projects = () => {
             <Pokemon pokemon={Pokemons.PHANPY} style={{ marginLeft: 48 }}/>
           </FlexRow>
 
-          <ProjectsWrapper style={{ marginTop: 60 }}>
-            {projects.slice(0, 3).map((project, index) => (
-              <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
-            ))}
-          </ProjectsWrapper>
+          {width >= 1920 ? (
+            <>
+              <ProjectsWrapper style={{ marginTop: 60 }}>
+                {projects.slice(0, 3).map((project, index) => (
+                  <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
+                ))}
+              </ProjectsWrapper>
 
-          <ProjectsWrapper style={{ marginTop: 120 }}>
-            {projects.slice(3, 5).map((project, index) => (
-              <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
-            ))}
-          </ProjectsWrapper>
+              <ProjectsWrapper style={{ marginTop: 120 }}>
+                {projects.slice(3, 5).map((project, index) => (
+                  <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
+                ))}
+              </ProjectsWrapper>
+            </>
+          ) : (
+            <>
+              <ProjectsWrapper style={{ marginTop: 60 }}>
+                {projects.slice(0, 2).map((project, index) => (
+                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                ))}
+              </ProjectsWrapper>
+
+              <ProjectsWrapper style={{ marginTop: 120 }}>
+                {projects.slice(2, 4).map((project, index) => (
+                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                ))}
+              </ProjectsWrapper>
+
+              <ProjectsWrapper style={{ marginTop: 120 }}>
+                {projects.slice(4, 5).map((project, index) => (
+                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                ))}
+              </ProjectsWrapper>
+            </>
+          )}
 
         </Wrapper>
       </BrowserView>

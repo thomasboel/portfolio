@@ -320,27 +320,28 @@ export const BackgroundDecoration = () => isMobile ? (
 ) : (
   <div style={{
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   }}>
     <img 
       src={repeatable} 
       alt=""
       style={{ 
-        opacity: .4
+        opacity: .3
       }} 
     />
     <img 
       src={repeatable} 
       alt=""
       style={{ 
-        opacity: .4
+        opacity: .3
       }} 
     />
     <img 
       src={repeatable} 
       alt=""
       style={{ 
-        opacity: .4
+        opacity: .3
       }} 
     />
   </div>
