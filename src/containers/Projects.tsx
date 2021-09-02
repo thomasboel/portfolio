@@ -97,7 +97,7 @@ const projects: Array<ProjectData> = [
 ];
 
 const Projects = () => {
-  const [ width, height ] = useWindowSize();
+  const [ width ] = useWindowSize();
 
   return (
     <>
