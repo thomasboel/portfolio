@@ -63,6 +63,13 @@ interface CopyEmailProps {
 const CopyEmail = ({ email, style }: CopyEmailProps) => {
   
   const [ hover, setHover ] = useState(false);
+  const [ copied, setCopied ] = useState(false);
+
+  const handleOnPress = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
 
   return (
     <>
@@ -70,23 +77,23 @@ const CopyEmail = ({ email, style }: CopyEmailProps) => {
         <Wrapper
           onMouseEnter={() => setHover(true)} 
           onMouseLeave={() => setHover(false)} 
-          onClick={() => navigator.clipboard.writeText(email)}
+          onClick={() => handleOnPress()}
           style={style}
         >
           <IconWrapper>
-            {hover 
+            {hover || copied 
             ? <CopyIcon color={colors.red} />
             : <MailIconSmallDesktop color={colors.lightPurple} />}
           </IconWrapper>
-          <Email color={hover ? colors.white : colors.lightPurple}>{email}</Email>
+          <Email color={hover || copied ? colors.white : colors.lightPurple}>{copied ? "copied to clipboard!" : email}</Email>
         </Wrapper>
       </BrowserView>
       <MobileView>
-        <Wrapper onClick={() => navigator.clipboard.writeText(email)} style={style}>
+        <Wrapper onClick={() => handleOnPress()} style={style}>
           <IconWrapper>
             <CopyIcon color={colors.red} />
           </IconWrapper>
-          <Email>{email}</Email>
+          <Email>{copied ? "copied to clipboard!" : email}</Email>
         </Wrapper>
       </MobileView>
     </>

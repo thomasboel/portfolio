@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   background-color: rgba(16, 16, 16, .2);
-  z-index: 1;
+  z-index: 2;
 `;
 
 const MenuWrapper = styled.div`

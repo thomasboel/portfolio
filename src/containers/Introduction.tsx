@@ -46,7 +46,7 @@ const Introduction = () => {
           <Label type={LabelType.SUB_HEADER} color={colors.lightPurple}>DEVELOPER & DEVOPS 👨‍💻</Label>
           <Label>I’m a design-minded developer with a love for DevOps<br/>based in Copenhagen, Denmark.</Label>
 
-          <Button href="#projects" style={{ marginTop: 56 }}>SEE MY WORK</Button>
+          <Button handleOnClick={() => window.scrollTo({ behavior: 'smooth', top: 1000 })} style={{ marginTop: 56 }}>SEE MY WORK</Button>
           <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 40 }}/>
 
           <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 80 }} />

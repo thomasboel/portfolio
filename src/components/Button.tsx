@@ -44,15 +44,27 @@ const Backdrop = styled.div`
 
 interface ButtonProps {
   children: any;
-  href: string;
+  href?: string;
+  handleOnClick?: () => void;
   style?: any;
 }
 
-const Button = ({ children, href, style }: ButtonProps) => {
+const Button = ({ children, href, handleOnClick, style }: ButtonProps) => {
   
   const [ hover, setHover ] = useState(false);
 
-  return (
+  return handleOnClick ? (
+    <Wrapper 
+      onMouseEnter={() => setHover(true)} 
+      onMouseLeave={() => setHover(false)} 
+      onClick={() => handleOnClick()}
+      hover={hover}
+      style={style}
+    >
+      <ButtonText hover={hover}>{children}</ButtonText>
+      <Backdrop />
+    </Wrapper>
+  ) : (
     <a href={href}>
       <Wrapper 
         onMouseEnter={() => setHover(true)} 

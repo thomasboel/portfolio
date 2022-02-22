@@ -20,6 +20,7 @@ const Wrapper = styled.div<WrapperProps>`
 
   width: ${props => props.small ? 40 : 72}px;
   height: ${props => props.small ? 40 : 72}px;
+  z-index: 1;
 
   ${media(sizes.tablet)`
     width: 120px;
