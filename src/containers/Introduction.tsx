@@ -6,6 +6,7 @@ import Label, { LabelType } from '../components/Label';
 import Button from '../components/Button';
 import Pokemon, { Pokemons } from '../components/Pokemon';
 import CopyEmail from '../components/CopyEmail';
+import Signature from '../components/Signature';
 
 import { colors, media, sizes } from '../util/theme';
 import { BackgroundDecoration } from '../util/icons';
@@ -33,6 +34,24 @@ const BackgroundDecorationWrapper = styled.div`
     top: -260px;
     right: 120px;
   `};
+
+  animation-name: bounce-1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  @keyframes bounce-1 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+  }
+`;
+
+const SignatureWrapper = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 800px;
+  z-index: 1;
 `;
 
 const Introduction = () => {
@@ -54,6 +73,10 @@ const Introduction = () => {
           <BackgroundDecorationWrapper>
             <BackgroundDecoration />
           </BackgroundDecorationWrapper>
+
+          <SignatureWrapper>
+            <Signature />
+          </SignatureWrapper>
 
         </Wrapper>
       </BrowserView>

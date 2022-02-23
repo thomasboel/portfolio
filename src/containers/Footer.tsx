@@ -19,12 +19,12 @@ const Footer = () => {
     <>
       <BrowserView>
         <Wrapper>
-          <Label color={colors.lightPurple}>© 2021 BOELMICHEELSEN.DK</Label>
+          <Label color={colors.lightPurple}>© 2021-2022 BOELMICHEELSEN.DK</Label>
         </Wrapper>
       </BrowserView>
       <MobileView>
         <Wrapper>
-          <Label color={colors.lightPurple}>© 2021 BOELMICHEELSEN.DK</Label>
+          <Label color={colors.lightPurple}>© 2021-2022 BOELMICHEELSEN.DK</Label>
         </Wrapper>
       </MobileView>
     </>

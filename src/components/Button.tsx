@@ -18,6 +18,10 @@ const Wrapper = styled.div<HoverProps>`
   padding: 13px 37px 13px 37px;
   border: 3px solid ${colors.lightPurple};
   background-color: ${props => !isMobile && props.hover ? colors.lightPurple : 'transparent'};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ButtonText = styled.p<HoverProps>`

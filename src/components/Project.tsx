@@ -49,6 +49,10 @@ const BrowserWrapper = styled.div<HoverProps>`
     align-self: flex-end;
     margin-right: 16px;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Backdrop = styled.div`
