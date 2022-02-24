@@ -50,7 +50,8 @@ const BackgroundDecorationWrapper = styled.div`
 const SignatureWrapper = styled.div`
   position: absolute;
   top: 100px;
-  right: 800px;
+  right: 50%;
+  transform: translateX(50%);
   z-index: 1;
 `;
 
