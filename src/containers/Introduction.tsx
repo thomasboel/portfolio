@@ -25,6 +25,7 @@ const BackgroundDecorationWrapper = styled.div`
   top: 152px;
   right: 40px;
   z-index: 0;
+  pointer-events: none;
 
   display: flex;
   flex-direction: column;
