@@ -20,10 +20,16 @@ const Wrapper = styled.section`
   `};
 `;
 
+const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+`;
+
 const BackgroundDecorationWrapper = styled.div`
   position: absolute;
-  top: 152px;
-  right: 40px;
+  top: -140px;
+  right: 24px;
   z-index: 0;
   pointer-events: none;
 
@@ -43,9 +49,17 @@ const BackgroundDecorationWrapper = styled.div`
 
   @keyframes bounce-1 {
     0%   { transform: translateY(0); }
-    50%  { transform: translateY(-100px); }
+    50%  { transform: translateY(-40px); }
     100% { transform: translateY(0); }
   }
+
+  ${media(sizes.tablet)`
+    @keyframes bounce-1 {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-100px); }
+      100% { transform: translateY(0); }
+    }
+  `}
 `;
 
 const SignatureWrapper = styled.div`
@@ -54,6 +68,7 @@ const SignatureWrapper = styled.div`
   right: 50%;
   transform: translateX(50%);
   z-index: 1;
+  pointer-events: none;
 `;
 
 const Introduction = () => {
@@ -91,14 +106,20 @@ const Introduction = () => {
           <Label type={LabelType.SUB_HEADER} color={colors.lightPurple}>DEVELOPER & DEVOPS 👨‍💻</Label>
           <Label>I’m a design-minded developer with a love for DevOps, based in Copenhagen, Denmark.</Label>
           
-          <Button href="#projects" style={{ marginTop: 32 }}>SEE MY WORK</Button>
-          <Pokemon pokemon={Pokemons.DITTO} style={{ marginTop: 32 }}/>
+          <FlexRow>
+            <Button handleOnClick={() => window.scrollTo({ behavior: 'smooth', top: 680 })} style={{ marginTop: 32 }}>SEE MY WORK</Button>
+            <Pokemon pokemon={Pokemons.DITTO} style={{ position: 'absolute', right: 64, top: 16 }}/>
+          </FlexRow>
           
-          <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 80 }}/>
+          <CopyEmail email={'thomas@boelmicheelsen.dk'} style={{ marginTop: 208 }}/>
           
           <BackgroundDecorationWrapper>
             <BackgroundDecoration />
           </BackgroundDecorationWrapper>
+
+          <SignatureWrapper>
+            <Signature mobile />
+          </SignatureWrapper>
 
         </Wrapper>
       </MobileView>

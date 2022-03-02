@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BrowserView, MobileView } from 'react-device-detect';
 
-import { BurgerMenuIcon } from '../util/icons';
 import { colors } from '../util/theme';
 
 import "../assets/burgerMenuStyles.css";

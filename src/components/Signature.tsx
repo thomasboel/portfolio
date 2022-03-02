@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../util/theme';
 
 interface SignatureSVGProps {
+  mobile: boolean;
   strokeWidth: number;
   strokeColor: string;
   strokeOpacity: number;
@@ -12,11 +13,12 @@ interface SignatureSVGProps {
   style?: any;
 }
 
-const SignatureSVG = ({ strokeWidth, strokeColor, strokeOffsets, strokeDashArray, strokeOpacity, style=null }: SignatureSVGProps) => {
+const SignatureSVG = ({ mobile, strokeWidth, strokeColor, strokeOffsets, strokeDashArray, strokeOpacity, style=null }: SignatureSVGProps) => {
   return (
     <svg 
-      width="800" 
+      width={mobile ? "400" : "800"}
       height="600"
+      viewBox='0 0 800 600'
       style={style}
     >
       <path 
@@ -53,55 +55,60 @@ const SignatureSVG = ({ strokeWidth, strokeColor, strokeOffsets, strokeDashArray
   );
 }
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  mobile: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   position: relative;
-  width: 800px;
+  width: ${props => props.mobile ? 400 : 800}px;
   height: 600px;
 `;
 
 interface SignatureProps {
+  mobile?: boolean;
   strokeWidth?: number;
   strokeColor?: string;
   strokeOpacity?: number;
 }
 
-const Signature = ({ strokeWidth=3, strokeColor=colors.red, strokeOpacity=1 }: SignatureProps) => {
+const Signature = ({ mobile=false, strokeWidth=3, strokeColor=colors.red, strokeOpacity=1 }: SignatureProps) => {
   const [ offsetA, setOffsetA ] = useState(2200);
   const [ offsetB, setOffsetB ] = useState(700);
   const [ offsetC, setOffsetC ] = useState(700);
 
   const [ speed ] = useState(3);
 
-  let interval: NodeJS.Timer;
-
   useEffect(() => {
+    let interval: NodeJS.Timer;
+
+    const startTimer = () => {
+      interval = setInterval(() => {
+        if (offsetA >= 0) {
+          setOffsetA(offsetA - speed);
+        }
+        else if (offsetB >= 0) {
+          setOffsetB(offsetB - speed);
+        }
+        else if (offsetC >= 0) {
+          setOffsetC(offsetC - speed);
+        }
+        else {
+          console.log(offsetA, offsetB, offsetC)
+          clearInterval(interval);
+        }
+      }, 0);
+    }
+
     startTimer()
 
     return () => {
       clearInterval(interval);
     }
-  }, [offsetA, offsetB, offsetC]);
-
-  const startTimer = () => {
-    interval = setInterval(() => {
-      if (offsetA >= 0) {
-        setOffsetA(offsetA - speed);
-      }
-      else if (offsetB >= 0) {
-        setOffsetB(offsetB - speed);
-      }
-      else if (offsetC >= 0) {
-        setOffsetC(offsetC - speed);
-      }
-      else {
-        console.log(offsetA, offsetB, offsetC)
-        clearInterval(interval);
-      }
-    }, 0);
-  }
+  }, [offsetA, offsetB, offsetC, speed]);
 
   return (
-    <Wrapper>
+    <Wrapper mobile={mobile}>
       <SignatureSVG
         strokeColor={strokeColor}
         strokeWidth={strokeWidth}
@@ -113,6 +120,7 @@ const Signature = ({ strokeWidth=3, strokeColor=colors.red, strokeOpacity=1 }: S
         ]}
         strokeDashArray={[2200, 700, 700]}
         style={{ position: 'absolute' }}
+        mobile={mobile}
       />
       <SignatureSVG
         strokeColor={strokeColor}
@@ -124,7 +132,8 @@ const Signature = ({ strokeWidth=3, strokeColor=colors.red, strokeOpacity=1 }: S
           offsetC < 0 ? 0 : offsetC
         ]}
         strokeDashArray={[2200, 700, 700]}
-        style={{ position: 'absolute', top: 10, left: 10 }}
+        style={{ position: 'absolute', top: mobile ? 5 : 10, left: mobile ? 5 : 10 }}
+        mobile={mobile}
       />
     </Wrapper>
   );

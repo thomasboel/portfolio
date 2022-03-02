@@ -1,6 +1,6 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
-import { colors } from './theme';
+
 import repeatable from '../assets/Repeatable.png';
 
 interface Color {
@@ -239,43 +239,6 @@ export const MasterBall = () => isMobile ? (
   </svg>
 );
 
-interface BurgerMenuIconProps {
-  active: boolean;
-  color?: string;
-}
-
-export const BurgerMenuIcon = ({ active, color=colors.lightPurple }: BurgerMenuIconProps) => isMobile ? active ? (
-  <svg width="40" height="29" viewBox="0 0 40 29">
-    <g id="BurgerIconClose" transform="translate(-295 -53)">
-      <g id="x" transform="translate(0 10)">
-        <rect id="top" width="30" height="3" rx="1.5" transform="translate(303.333 67.046) rotate(-45)" fill="#f4f4f4"/>
-        <rect id="bottom" width="30" height="3" rx="1.5" transform="translate(305.454 45.832) rotate(45)" fill="#f4f4f4"/>
-      </g>
-      <rect id="boxing" width="40" height="29" transform="translate(295 53)" fill="none"/>
-    </g>
-  </svg>
-) : (
-  <svg width="40" height="29" viewBox="0 0 40 29">
-    <g id="BurgerIcon" transform="translate(-295 -56)">
-      <rect id="bottom" width="30" height="3" rx="1.5" transform="translate(300 82)" fill="#a288e3"/>
-      <rect id="middle" width="40" height="3" rx="1.5" transform="translate(295 69)" fill="#a288e3"/>
-      <rect id="top" width="30" height="3" rx="1.5" transform="translate(300 56)" fill="#a288e3"/>
-    </g>
-  </svg>
-) : active ? (
-  <svg id="BurgerIconClose" width="80" height="46.67" viewBox="0 0 80 46.67">
-    <rect id="Rectangle_2197" data-name="Rectangle 2197" width="80" height="6" rx="3" transform="translate(0 20.669)" fill={color} opacity="0"/>
-    <rect id="Rectangle_2198" data-name="Rectangle 2198" width="60" height="6" rx="3" transform="translate(24.665 42.426) rotate(-45)" fill={color}/>
-    <rect id="Rectangle_2199" data-name="Rectangle 2199" width="60" height="6" rx="3" transform="translate(28.908 0) rotate(45)" fill={color}/>
-  </svg>
-) : (
-  <svg id="BurgerIcon" width="80" height="50" viewBox="0 0 80 50">
-    <rect id="Rectangle_2197" data-name="Rectangle 2197" width="80" height="6" rx="3" transform="translate(0 22)" fill={color}/>
-    <rect id="Rectangle_2198" data-name="Rectangle 2198" width="60" height="6" rx="3" transform="translate(10)" fill={color}/>
-    <rect id="Rectangle_2199" data-name="Rectangle 2199" width="60" height="6" rx="3" transform="translate(10 44)" fill={color}/>
-  </svg>
-);
-
 export const CopyIcon = ({ color }: Color) => isMobile ? (
   <svg width="18.008" height="20.676" viewBox="0 0 18.008 20.676">
     <g id="CopyIcon" transform="translate(-37.306 -741.662)">
@@ -298,54 +261,28 @@ export const MailIconSmallDesktop = ({ color }: Color) => (
   </svg>
 );
 
-export const BackgroundDecoration = () => isMobile ? (
-  <svg width="165.067" height="504" viewBox="0 0 165.067 504">
-    <g id="BackgroundDecoMobile" transform="translate(-187.55 -360)" opacity="0.4">
-      <path id="Path_47" data-name="Path 47" d="M-10658.335,7585v108.128s2.012,36.025-33.993,36-34.8-36-34.8-36-.744-36.281,34.8-36.053" transform="translate(11008.896 -7189.104)" fill="none" stroke="#de3c4b" stroke-width="4"/>
-      <g id="Rectangle_2183" data-name="Rectangle 2183" transform="translate(188 504)" fill="none" stroke="#a288e3" stroke-width="4">
-        <rect width="72" height="144" rx="36" stroke="none"/>
-        <rect x="2" y="2" width="68" height="140" rx="34" fill="none"/>
-      </g>
-      <path id="Path_48" data-name="Path 48" d="M-10727.11,7729.127V7621s-2.013-36.025,33.993-36,34.8,36,34.8,36,.744,36.281-34.8,36.053" transform="translate(10916.717 -6901.331)" fill="none" stroke="#de3c4b" stroke-width="4"/>
-      <g id="Rectangle_2190" data-name="Rectangle 2190" transform="translate(280 720)" fill="none" stroke="#a288e3" stroke-width="4">
-        <rect width="72" height="144" rx="36" stroke="none"/>
-        <rect x="2" y="2" width="68" height="140" rx="34" fill="none"/>
-      </g>
-      <rect id="Rectangle_2191" data-name="Rectangle 2191" width="4" height="108" rx="2" transform="translate(316 576)" fill="#a288e3"/>
-      <rect id="Rectangle_2192" data-name="Rectangle 2192" width="4" height="108" rx="2" transform="translate(222 360)" fill="#de3c4b"/>
-      <rect id="Rectangle_2201" data-name="Rectangle 2201" width="3.599" height="3.599" rx="1.8" transform="translate(221.835 753.923)" fill="#de3c4b"/>
-      <rect id="Rectangle_2202" data-name="Rectangle 2202" width="3.599" height="3.599" rx="1.8" transform="translate(314.699 466.175)" fill="#de3c4b"/>
-    </g>
-  </svg>
-) : (
-  <div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-  }}>
-    <img 
-      src={repeatable} 
-      alt=""
-      style={{ 
-        opacity: .3
-      }} 
-    />
-    <img 
-      src={repeatable} 
-      alt=""
-      style={{ 
-        opacity: .3
-      }} 
-    />
-    <img 
-      src={repeatable} 
-      alt=""
-      style={{ 
-        opacity: .3
-      }} 
-    />
-  </div>
-);
+export const BackgroundDecoration = () => {
+  const repeatCount = isMobile ? 7 : 3;
+
+  return (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-end',
+    }}>
+      {Array(repeatCount).fill(0).map(() => (
+        <img 
+          src={repeatable} 
+          alt=""
+          style={{ 
+            opacity: isMobile ? 0.2 : 0.3,
+            width: isMobile ? 180 : 'auto'
+          }} 
+        />
+      ))}
+    </div>
+  );
+};
 
 export const GitHubIcon = ({ color }: Color) => isMobile ? (
   <svg width="32" height="32" viewBox="0 0 32 32">
