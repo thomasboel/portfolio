@@ -77,7 +77,7 @@ const Signature = ({ mobile=false, strokeWidth=3, strokeColor=colors.red, stroke
   const [ offsetB, setOffsetB ] = useState(700);
   const [ offsetC, setOffsetC ] = useState(700);
 
-  const [ speed ] = useState(3);
+  const [ speed ] = useState(mobile ? 3 : 2);
 
   useEffect(() => {
     let interval: NodeJS.Timer;
