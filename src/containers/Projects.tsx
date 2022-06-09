@@ -67,7 +67,7 @@ const projects: Array<ProjectData> = [
     description: "Noodle event planner will help you create and communicate the schedule to any participants.",
     technologies: [ "React-Native", "Express", "MariaDB", "Docker" ],
     links: [ 
-      { url: "https://github.com", icon: (color: string) => <GitHubIcon color={color} /> } 
+       
     ]
   },
   {
