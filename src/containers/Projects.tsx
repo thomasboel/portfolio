@@ -8,8 +8,10 @@ import Project from '../components/Project';
 
 import { useWindowSize } from '../hooks/useWindowSize';
 
-import { ExternalLinkIcon, GitHubIcon } from '../util/icons';
 import { media, sizes } from '../util/theme';
+
+import projects from '../assets/projectData';
+import { ProjectData } from '../util/interfaces';
 
 const Wrapper = styled.section`
   padding: 0 24px 0 24px;
@@ -41,62 +43,11 @@ const ProjectsWrapper = styled.div`
   `};
 `;
 
-interface ProjectLink {
-  url: string;
-  icon: (color: string) => JSX.Element;
+interface ProjectsProps {
+  setActiveProject: (project: ProjectData) => void;
 }
 
-export interface ProjectData {
-  title: string;
-  description: string;
-  technologies: Array<string>;
-  links: Array<ProjectLink>;
-}
-
-const projects: Array<ProjectData> = [
-  {
-    title: "PayShare",
-    description: "Share your receipts, select who, what and how much. Keep track of the economy.",
-    technologies: [ "React-Native", ".NET Core", "Postgres", "AWS", "Docker" ],
-    links: [ 
-      { url: "https://payshare.dk", icon: (color: string) => <ExternalLinkIcon color={color} /> }
-    ]
-  },
-  {
-    title: "Noodle",
-    description: "Noodle event planner will help you create and communicate the schedule to any participants.",
-    technologies: [ "React-Native", "Express", "MariaDB", "Docker" ],
-    links: [ 
-       
-    ]
-  },
-  {
-    title: "Presuno",
-    description: "Presuno turns you and your smartphone into a complete TV crew! Live Streaming software.",
-    technologies: [ "React", "React-Native", "Wowza", ".NET Core" ],
-    links: [ 
-      { url: "https://presuno.com", icon: (color: string) => <ExternalLinkIcon color={color} /> } 
-    ]
-  },
-  {
-    title: "Katalog",
-    description: "Keep track and share diet/intolerance catalogs with your friends or the public!",
-    technologies: [ "React-Native", "Express", "Postgres", "AWS", "Docker" ],
-    links: [ 
-      { url: "https://katalog.sikkerforskning.dk", icon: (color: string) => <ExternalLinkIcon color={color} /> } 
-    ]
-  },
-  {
-    title: "Portfolio Website",
-    description: "Should you be interested, the code for this website has been pushed to GitHub 😃",
-    technologies: [ "React with typescript ❤" ],
-    links: [ 
-      { url: "https://github.com/thomasboel/portfolio", icon: (color: string) => <GitHubIcon color={color} /> }
-    ]
-  }
-];
-
-const Projects = () => {
+const Projects = ({ setActiveProject }: ProjectsProps) => {
   const [ width ] = useWindowSize();
 
   return (
@@ -113,13 +64,13 @@ const Projects = () => {
             <>
               <ProjectsWrapper style={{ marginTop: 60 }}>
                 {projects.slice(0, 3).map((project, index) => (
-                  <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
+                  <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
                 ))}
               </ProjectsWrapper>
 
               <ProjectsWrapper style={{ marginTop: 120 }}>
                 {projects.slice(3, 5).map((project, index) => (
-                  <Project key={index} project={project} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
+                  <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ top: index * 20, marginLeft: index === 0 ? 0 : 160 }}/>
                 ))}
               </ProjectsWrapper>
             </>
@@ -127,19 +78,19 @@ const Projects = () => {
             <>
               <ProjectsWrapper style={{ marginTop: 60 }}>
                 {projects.slice(0, 2).map((project, index) => (
-                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                  <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
                 ))}
               </ProjectsWrapper>
 
               <ProjectsWrapper style={{ marginTop: 120 }}>
                 {projects.slice(2, 4).map((project, index) => (
-                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                  <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
                 ))}
               </ProjectsWrapper>
 
               <ProjectsWrapper style={{ marginTop: 120 }}>
                 {projects.slice(4, 5).map((project, index) => (
-                  <Project key={index} project={project} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
+                  <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ marginLeft: index === 0 ? 0 : 160 }}/>
                 ))}
               </ProjectsWrapper>
             </>
@@ -157,7 +108,7 @@ const Projects = () => {
           
           <ProjectsWrapper>
             {projects.map((project, index) => (
-              <Project key={index} project={project} style={{ marginTop: index === 0 ? 32 : 56 }}/>
+              <Project key={index} project={project} handleOnClick={() => setActiveProject(project)} style={{ marginTop: index === 0 ? 32 : 56 }}/>
             ))}
           </ProjectsWrapper>
 

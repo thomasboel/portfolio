@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 import Label, { LabelType } from './Label';
 
-import { ProjectData } from '../containers/Projects';
 import { colors, media, sizes } from '../util/theme';
-import { BrowserView, MobileView } from 'react-device-detect';
+import { ProjectData } from '../util/interfaces';
 
 interface HoverProps {
   hover?: boolean;
@@ -115,10 +115,11 @@ const Indentation = styled.div`
 
 interface ProjectProps {
   project: ProjectData;
+  handleOnClick: () => void;
   style?: any;
 }
 
-const Project = ({ project, style }: ProjectProps) => {
+const Project = ({ project, handleOnClick, style }: ProjectProps) => {
   
   const [ hover, setHover ] = useState(false);
 
@@ -131,7 +132,7 @@ const Project = ({ project, style }: ProjectProps) => {
           hover={hover}
           style={style}
           onClick={() => {
-            if (project.links.length === 1) { window.open(project.links[0].url, '_blank') }
+            handleOnClick();
           }}
         >
 
